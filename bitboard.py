@@ -43,11 +43,24 @@ def index_to_square(index: int):
     sq = f"{"abcdefgh"[file]}{rank+1}"
     return sq
 
-bb = 0
-bb = set_bit(bb, 0)
-bb = set_bit(bb, square_index('e', 4))
-bb = set_bit(bb, 63)
-print(bin(bb))
+if __name__ == "__main__":
+    rank1 = [
+        ('a',1),            
+        ('b',1),            
+        ('c',1),            
+        ('d',1),            
+        ('e',1),            
+        ('f',1),            
+        ('g',1),            
+        ('h',1),            
+    ]
+    bb = 0
+    for r in rank1:
+        print(r)
+        bb = set_bit(bb, square_index(r[0], r[1]))
+    print(bin(bb))
 
-print_bitboard(bb)
-print(index_to_square(63))
+    print_bitboard(bb)
+    print(bin(bb))
+    print(hex(bb))
+    print(index_to_square(63))
